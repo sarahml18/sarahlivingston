@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ============================================================
+    SARAH LIVINGSTON — WORK PAGE
+    Each case study has an id (e.g. id="flair-voyage") that the
+    homepage work cards link to.
+
+    TO ADD A NEW CASE STUDY:
+    Copy one of the <article class="case-study"> blocks below,
+    paste it at the end of the list, update the id and all content,
+    and add a matching card on index.html.
+
+    TO REORDER:
+    Cut and paste the entire <article> block to a new position.
+  ============================================================ -->
+  <title>Work — Sarah Livingston</title>
+  <meta name="description" content="Case studies and selected work by Sarah Livingston, brand strategist and copywriter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:       #F5F7F2;
+      --cream-dark:  #E8EDE2;
+      --border:      #C5CEBC;
+      --green-light: #EAF3DE;
+      --green-mid:   #7A9C7B;
+      --green-deep:  #3B6D11;
+      --forest:      #1E2A1F;
+      --text-primary:#1E2A1F;
+      --text-muted:  #4A5C4B;
+      --text-faint:  #7A9C7B;
+      --white:       #FFFFFF;
+      --tag-bg:      #EAF3DE;
+      --tag-text:    #27500A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; border-radius: 6px; }
+
+    /* === NAV === */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 60px;
+      border-bottom: 0.5px solid var(--border);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text-primary); }
+
+    /* === PAGE HEADER === */
+    .page-header {
+      padding: 72px 60px 56px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-family: 'Lora', serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* === WORK INDEX (jump links) === */
+    .work-index {
+      padding: 32px 60px;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .work-index-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 500;
+      margin-right: 8px;
+    }
+
+    .index-pill {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-muted);
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      transition: all 0.2s;
+    }
+
+    .index-pill:hover {
+      background: var(--green-light);
+      border-color: var(--green-mid);
+      color: var(--text-primary);
+    }
+
+    /* === CASE STUDY === */
+    .case-study {
+      padding: 80px 60px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .case-study:last-child { border-bottom: none; }
+
+    /* Meta row: tag + year + role */
+    .cs-meta {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cs-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cs-year {
+      font-size: 13px;
+      color: var(--text-faint);
+      font-weight: 400;
+    }
+
+    .cs-role {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Title + intro */
+    .cs-title {
+      font-family: 'Lora', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .cs-intro {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    /* Two-column layout: text left, image right */
+    .cs-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .cs-body.image-left {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-body.image-left .cs-image { order: -1; }
+
+    /* Text blocks */
+    .cs-section-heading {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 500;
+      margin-bottom: 10px;
+      margin-top: 32px;
+    }
+
+    .cs-section-heading:first-child { margin-top: 0; }
+
+    .cs-text p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .cs-text p:last-child { margin-bottom: 0; }
+
+    .cs-text strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* Deliverables list */
+    .cs-deliverables {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .cs-deliverables li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cs-deliverables li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    /* Impact callout */
+    .cs-impact {
+      background: var(--green-light);
+      border-left: 3px solid var(--green-deep);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+
+    .cs-impact p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+
+    /* Image placeholder */
+    .cs-image {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .cs-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Use this class on a div when you don't have an image yet */
+    .cs-image-placeholder {
+      background: var(--cream-dark);
+      border-radius: 8px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cs-image-placeholder span {
+      font-size: 12px;
+      color: var(--green-mid);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* === CTA BANNER === */
+    .cta-banner {
+      background: var(--forest);
+      padding: 72px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Lora', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .cta-banner p { font-size: 15px; color: var(--green-mid); }
+
+    .cta-links { display: flex; gap: 14px; flex-shrink: 0; }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--forest);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 13px 26px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .btn-light:hover { opacity: 0.9; }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 13px 26px;
+      border-radius: 4px;
+      border: 0.5px solid #4A5C4B;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    /* === FOOTER === */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 60px;
+      border-top: 0.5px solid var(--border);
+      background: var(--cream);
+    }
+
+    .footer-logo { font-family: 'Lora', serif; font-size: 14px; color: var(--text-faint); }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-faint);
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text-primary); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      nav { padding: 18px 28px; }
+      .page-header { padding: 48px 28px 40px; }
+      .work-index { padding: 24px 28px; }
+      .case-study { padding: 56px 28px; }
+      .cs-body { grid-template-columns: 1fr; }
+      .cs-body.image-left .cs-image { order: 0; }
+      .cta-banner { flex-direction: column; padding: 48px 28px; }
+      .cta-links { flex-direction: column; width: 100%; }
+      footer { flex-direction: column; gap: 16px; padding: 24px 28px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === NAVIGATION === -->
+  <nav>
+    <a href="index.html" class="nav-logo">Sarah Livingston</a>
+    <ul class="nav-links">
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/sarahlivingston01/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <!-- === PAGE HEADER === -->
+  <header class="page-header">
+    <p class="page-eyebrow">Portfolio</p>
+    <h1>Selected work</h1>
+    <p>A collection of brand strategy, copywriting, and creative projects across aviation, sports, entertainment, and lifestyle.</p><!-- EDIT THIS INTRO LINE -->
+  </header>
+
+  <!-- === JUMP LINKS INDEX ===
+    These pills let visitors jump to a specific case study.
+    Update the href and label to match each article's id below.
+  -->
+  <nav class="work-index" aria-label="Jump to case study">
+    <span class="work-index-label">Jump to</span>
+    <a href="#flair-voyage" class="index-pill">Flair Voyage Magazine</a>
+    <a href="#fan-festival" class="index-pill">Fan Festival</a>
+    <a href="#flair-fwd" class="index-pill">Flair FWD</a>
+    <a href="#lifestyle-shoot" class="index-pill">Lifestyle Photoshoot</a>
+    <a href="#disruption" class="index-pill">Disruption Messages</a>
+    <!-- ADD MORE PILLS HERE AS YOU ADD CASE STUDIES -->
+  </nav>
+
+
+  <!-- ============================================================
+    CASE STUDY 1 — FLAIR VOYAGE MAGAZINE
+    id="flair-voyage" matches the link on index.html
+  ============================================================ -->
+  <article class="case-study" id="flair-voyage">
+    <div class="cs-meta">
+      <span class="cs-tag">Content & Editorial</span><!-- TAG -->
+      <span class="cs-year">2025</span><!-- YEAR -->
+      <span class="cs-role">Copywriter · Editor · Project Manager · Stakeholder Alignment</span><!-- YOUR ROLE -->
+    </div>
+    <h2 class="cs-title">Flair Voyage — Inflight Magazine</h2><!-- PROJECT TITLE -->
+    <p class="cs-intro">Creating an inflight magazine that felt elevated, modern, and brand-aligned — while engaging a captive audience and opening the door to future advertising revenue. The kind of inflight magazine you actually want to read.</p><!-- INTRO — 1–2 SENTENCES -->
+
+    <div class="cs-body">
+      <div class="cs-text">
+        <p class="cs-section-heading">The challenge</p>
+        <p>Flair needed a publication that balanced inspiration, utility, and brand storytelling — without feeling like traditional airline marketing. The magazine had to work hard: delight passengers mid-flight <em>and</em> serve as a scalable revenue vehicle through advertising partnerships.</p><!-- EDIT THIS -->
+
+        <p class="cs-section-heading">What I did</p>
+        <ul class="cs-deliverables">
+          <li>Wrote and edited all editorial copy across multiple issues</li>
+          <li>Developed bilingual EN/FR content for Quebec-facing spreads</li>
+          <li>Created destination features, PTO strategy content, and travel quizzes</li>
+          <li>Managed stakeholder review and approval workflows</li>
+          <li>Built a scalable content framework for future issues and seatback ads</li>
+        </ul><!-- EDIT DELIVERABLES -->
+
+        <div class="cs-impact">
+          <p>Advertorial pieces opened the door to authentic tourism board and travel trade partnerships, increasing revenue while elevating the brand. A scalable content framework is now in place for future opportunities including seatback ads and digital content.</p><!-- EDIT IMPACT -->
+        </div>
+      </div>
+
+      <div class="cs-image">
+        <!-- REPLACE WITH YOUR ACTUAL IMAGE:
+             <img src="images/voyage-magazine.jpg" alt="Flair Voyage magazine spread" />
+             Save images in an "images" folder alongside your HTML files.
+        -->
+        <div class="cs-image-placeholder">
+          <span>Add project image</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ============================================================
+    CASE STUDY 2 — FAN FESTIVAL LANDING PAGE
+  ============================================================ -->
+  <article class="case-study" id="fan-festival">
+    <div class="cs-meta">
+      <span class="cs-tag">Campaign Copy</span>
+      <span class="cs-year">2025</span>
+      <span class="cs-role">Copywriter · Editor · Brand Strategist</span>
+    </div>
+    <h2 class="cs-title">Fan Festival — Landing Page & Campaign</h2>
+    <p class="cs-intro">Creating excitement and anticipation for a large-scale fan festival in Vancouver while clearly communicating key event details in a way that was easy to navigate and SEO-friendly for mobile.</p>
+
+    <div class="cs-body image-left">
+      <div class="cs-image">
+        <div class="cs-image-placeholder">
+          <span>Add project image</span>
+        </div>
+      </div>
+
+      <div class="cs-text">
+        <p class="cs-section-heading">The challenge</p>
+        <p>The brief called for a balance between bold visual storytelling and a clear information hierarchy. Copy needed to drive ticket sales while also serving as a practical event guide — two goals that often pull in opposite directions.</p>
+
+        <p class="cs-section-heading">What I did</p>
+        <ul class="cs-deliverables">
+          <li>Wrote full landing page copy across multiple phases (awareness → purchase)</li>
+          <li>Developed copy for Know Before You Go, accessibility, and venue info sections</li>
+          <li>Created corporate partner pre-sale emails in formal and warm registers</li>
+          <li>Wrote TV and radio spot scripts, including distinct Talent Focus and Match Focus cuts</li>
+          <li>Produced Phase 2 copy driving early ticket sales and premium Amphitheatre experiences</li>
+          <li>Developed May social content across six content pillars</li>
+        </ul>
+
+        <div class="cs-impact">
+          <p>Delivered a cohesive multi-channel campaign voice that balanced warmth and excitement — from a landing page scanning easily on mobile to radio scripts that sounded natural out loud.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ============================================================
+    CASE STUDY 3 — FLAIR FWD
+  ============================================================ -->
+  <article class="case-study" id="flair-fwd">
+    <div class="cs-meta">
+      <span class="cs-tag">Brand Strategy</span>
+      <span class="cs-year">2025</span>
+      <span class="cs-role">Brand Strategist · Copywriter · Project Manager</span>
+    </div>
+    <h2 class="cs-title">Flair FWD — Brand Repositioning Initiative</h2>
+    <p class="cs-intro">Repositioning the Flair Airlines brand with a unifying initiative to signal forward momentum — internally to employees, and externally to customers navigating a period of transformation.</p>
+
+    <div class="cs-body">
+      <div class="cs-text">
+        <p class="cs-section-heading">The challenge</p>
+        <p>Flair was entering a significant period of change and needed more than a campaign — it needed a <strong>north star</strong>. Something that could guide brand, culture, and future customer experience decisions from a single, cohesive message.</p>
+
+        <p class="cs-section-heading">What I did</p>
+        <ul class="cs-deliverables">
+          <li>Developed messaging hierarchy, values, and brand purpose</li>
+          <li>Led copywriting for public launch events in Toronto and Vancouver</li>
+          <li>Created branded merchandise and materials</li>
+          <li>Built and maintained internal communications across the company</li>
+          <li>Drove ongoing brand voice development and governance</li>
+        </ul>
+
+        <div class="cs-impact">
+          <p>The Flair FWD initiative now guides brand, culture, and future-facing customer experience improvements — providing a single, coherent message that works for passengers and employees alike.</p>
+        </div>
+      </div>
+
+      <div class="cs-image">
+        <div class="cs-image-placeholder">
+          <span>Add project image</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ============================================================
+    CASE STUDY 4 — LIFESTYLE PHOTOSHOOT
+  ============================================================ -->
+  <article class="case-study" id="lifestyle-shoot">
+    <div class="cs-meta">
+      <span class="cs-tag">Creative Production</span>
+      <span class="cs-year">2025</span>
+      <span class="cs-role">Assistant Art Director · Project Manager · Stylist · Travel Coordinator</span>
+    </div>
+    <h2 class="cs-title">Lifestyle Photoshoot — Travel Campaign Imagery</h2>
+    <p class="cs-intro">Developing lifestyle imagery that could emotionally sell the idea of travel, while working within tight budget constraints and limited production resources. Oh, and occasionally jumping in front of the camera too.</p>
+
+    <div class="cs-body image-left">
+      <div class="cs-image">
+        <div class="cs-image-placeholder">
+          <span>Add project image</span>
+        </div>
+      </div>
+
+      <div class="cs-text">
+        <p class="cs-section-heading">The challenge</p>
+        <p>The visuals needed to be flexible enough to work across paid media, social, and brand campaigns — shot on a tight budget with a 14-person crew. Every decision had to stretch further than it normally would.</p>
+
+        <p class="cs-section-heading">What I did</p>
+        <ul class="cs-deliverables">
+          <li>Assisted with art direction and creative vision on set</li>
+          <li>Sourced all clothing, props, and styling for the shoot</li>
+          <li>Coordinated logistics and travel for 14 people</li>
+          <li>Adapted on the fly to solve production challenges in real time</li>
+          <li>Stepped in as an extra model between directing duties</li>
+        </ul>
+
+        <div class="cs-impact">
+          <p>Delivered a flexible library of lifestyle imagery used across paid media, social, and brand campaigns — proving that resourcefulness and creative problem-solving can punch well above a budget's weight.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+  <!-- ============================================================
+    CASE STUDY 5 — DISRUPTION MESSAGES
+  ============================================================ -->
+  <article class="case-study" id="disruption">
+    <div class="cs-meta">
+      <span class="cs-tag">Customer Experience</span>
+      <span class="cs-year">2024</span>
+      <span class="cs-role">Copywriter · Editor · Project Manager · Stakeholder Alignment</span>
+    </div>
+    <h2 class="cs-title">Disruption Messages — Customer Communications</h2>
+    <p class="cs-intro">Rewriting Flair's flight disruption notifications to be more transparent, human, and clear — without overpromising or creating operational risk. 300+ templates, all rethought from the ground up.</p>
+
+    <div class="cs-body">
+      <div class="cs-text">
+        <p class="cs-section-heading">The challenge</p>
+        <p>When flights are delayed or cancelled, passengers are already stressed. The existing templates leaned on vague, legal-safe language that prioritized brevity over clarity — leaving customers feeling anxious and in the dark. The brief was to fix that, without creating new problems for the operations team.</p>
+
+        <p class="cs-section-heading">What I did</p>
+        <ul class="cs-deliverables">
+          <li>Audited and rewrote 300+ SMS and email disruption notification templates</li>
+          <li>Developed a consistent, human brand voice for high-stress moments</li>
+          <li>Balanced transparency with operational accuracy at every touchpoint</li>
+          <li>Managed multi-stakeholder review across ops, legal, and customer experience teams</li>
+          <li>Built a scalable template system for future communications</li>
+        </ul>
+
+        <div class="cs-impact">
+          <p>Every disruption message now leads with empathy, explains the situation clearly, and gives passengers the specific information they need — without hedging language that erodes trust at the worst possible moment.</p>
+        </div>
+      </div>
+
+      <div class="cs-image">
+        <div class="cs-image-placeholder">
+          <span>Add project image</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+    ADD MORE CASE STUDIES HERE
+    Copy one of the <article class="case-study"> blocks above,
+    paste below this comment, change the id, and update all content.
+    Then add a matching pill to the work-index nav and a card to index.html.
+  ============================================================ -->
+
+
+  <!-- === CTA BANNER === -->
+  <div class="cta-banner">
+    <div>
+      <h2>Like what you see?</h2>
+      <p>Open to full-time brand strategy and marketing roles in Vancouver.</p>
+    </div>
+    <div class="cta-links">
+      <a href="mailto:sarahmarion18@gmail.com" class="btn-light">Get in touch</a>
+      <a href="https://www.linkedin.com/in/sarahlivingston01/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <div class="footer-logo">Sarah Livingston</div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/sarahlivingston01/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/assembly_required_/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/s_livingston01" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+</body>
+</html>
